@@ -1,0 +1,75 @@
+<html>
+  <script language="javascript">
+    function Address(a) {
+  if(a.addresstoo.checked == true) {
+    a.f2name.value = a.f1name.value;
+    a.l2name.value=a.l1name.value;
+    a.addcity.value=a.mailcity.value;
+    a.addstate.value=a.mailstate.value;
+    a.addzip.value=a.mailzip.value;
+  }
+}
+  </script>
+    <h1>Register</h1>
+    <style>
+      li{
+        display: inline;
+      }
+    </style>
+    <body>
+      <form>
+        <ul>
+            <li><input type="radio">About yourself</li>
+            <li><input type="radio">Contact Info</li>
+            <li><input type="radio">Education</li>
+            <li><input type="radio">Preview</li>
+          </ul>
+
+          <h3>Address</h3>
+          <h4>Mail Address</h4>
+          <ul>
+            <li><input placeholder="Address Line 1" name="f1name" style="width: 500px;" required></li><br><br>
+            <li><input placeholder="Address Line 2" name="l1name" style="width: 500px;" required></li><br><br>
+            <li><input placeholder="City" name="mailcity" required></li>
+            <li><name="mailstate" required></li><select>
+                <option>State</option>
+              <option>Durgapur</option>
+              <option>Delhi</option>
+              <option>Patna</option>
+              <option>Kolkata</option>
+              </select>
+            <li><input placeholder="Zip code" name="mailzip" required></li>
+           </ul>
+           <h4>Permanent Address </h4>
+           <input type="checkbox" name="addresstoo" onclick="Address(this.form)">
+           <label for="address">Same as mail address</label>
+           <h4> Address</h4>
+           <ul>
+             <li><input placeholder="Address Line 1" name="f2name" style="width: 500px;" required></li><br><br>
+             <li><input placeholder="Address Line 2" name="l2name" style="width: 500px;" required></li><br><br>
+             <li><input placeholder="City" name="addcity" required></li>
+             <li><name="addstate" required></li><select>
+              <option>State</option>
+            <option>Durgapur</option>
+            <option>Delhi</option>
+            <option>Patna</option>
+            <option>Kolkata</option>
+            </select>
+             <li><input placeholder="Zip code" name="addzip" required></li>
+            </ul>
+       </form> 
+         
+       <div style="width:400px;">
+        <div style="float: left; width: 130px"> 
+            <form action="about.html">
+                <input type="submit" name = "" value="Back" >
+            </form>
+        </div>
+        <div style="float: right; width: 225px"> 
+            <form action="education.html" >
+                <input type="submit" name = "" value="Next" >
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

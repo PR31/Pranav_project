@@ -1,0 +1,49 @@
+<html>
+  <h1>Register</h1>
+  <style>
+    li{
+      display: inline;
+    }
+  </style>
+  <body>
+    <ul>
+      <li><input type="radio">About yourself</li>
+      <li><input type="radio">Contact Info</li>
+      <li><input type="radio">Education</li>
+      <li><input type="radio">Preview</li>
+    </ul>
+
+    <h2>Basic Info</h2>
+      <h3>Name</h3>
+  <ul>
+   <li><input placeholder="First" name="fname" required>   <input placeholder="Last" name="lname" required></p></li>
+  </ul>
+  <h3>Profile Photo</h3>
+  <input type="file" accept="image/*" onchange="loadFile(event)">
+  <img id="output"/>
+  <script>
+    var loadFile = function(event) {
+      var output = document.getElementById('output');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
+        URL.revokeObjectURL(output.src) // free memory
+      }
+    };
+  </script>
+
+  <h3>DOB</h3>
+  <input type="date" name="dob" required>
+
+  <h3>Phone</h3>
+  <input type="number" name="phone" required>
+
+  <h3>Email</h3>
+  <input type="text" name="email" required><br><br>
+   <form action="contact.html">
+  <input type="submit" value="Next">
+    </form>
+  
+
+  
+  </body>
+</html>

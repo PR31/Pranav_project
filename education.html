@@ -1,0 +1,100 @@
+<html>
+      <head>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+    <body>
+        <h1>Register</h1>
+        <style>
+          li{
+            display: inline;
+          }
+        </style>
+        <body>
+          <form>
+            <ul>
+                <li><input type="radio">About yourself</li>
+                <li><input type="radio">Contact Info</li>
+                <li><input type="radio">Education</li>
+                <li><input type="radio">Preview</li>
+              </ul>
+              <h4>Higher Education</h4>
+              <ul>
+                <li><input list="browsers" name="education" id="browser" style="width: 500px;" required>
+                <datalist id="browsers">
+                  <option value="B.tech">
+                  <option value="MCA">
+                  <option value="MBA">
+                  <option value="M.tech">
+                </datalist></li></ul>
+                <ul>
+                    <li>
+                        <h4>Skills</h4></li></ul>
+                        <tr>
+                        <table id="customers">
+                           <td> <input list="skill" name="product" id="browser" placeholder="Select Skills" required>
+                                        <datalist id="skill">
+                                          <option value="C">
+                                          <option value="Java">
+                                          <option value="C++">
+                                          <option value="Python">
+                                            <option value="html">
+                                        </datalist></table></td>
+                        <button type ="button">+Add Skills</button>
+                        <script>
+            
+                            $(document).ready(function(){
+                       
+                              $("button").on("click", function(){
+                       
+                                var row = '<tr><td><input list="skill" name="product" value="" placeholder="Select Skills">';
+                       
+                                $("#customers").append(row);
+                       
+                              });
+                       
+                            });
+                       
+                           </script>
+
+                           <ul><li><h4>Resume</h4>
+                           <input type="file" accept="image/*" onchange="loadFile(event)"></li>
+  <img id="output"/>
+  <script>
+    var loadFile = function(event) {
+      var output = document.getElementById('output');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
+        URL.revokeObjectURL(output.src) // free memory
+      }
+    };
+  </script>
+  <li><h4>Education Docs.</h4>
+    <input type="file" accept="image/*" onchange="loadFile(event)"></li>
+    <img id="output"/>
+    <script>
+      var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src) // free memory
+        }
+      };
+    </script>
+  </ul>
+  <div style="width:400px;">
+    <div style="float: left; width: 130px"> 
+        <form action="contact.html">
+            <input type="submit" name = "" value="Back" >
+        </form>
+    </div>
+    <div style="float: right; width: 225px"> 
+        <form action="preview.html">
+            <input type="submit" name = "" value="Next" >
+        </form>
+    </div>
+</div>
+
+  
+
+    </body>
+</html>
