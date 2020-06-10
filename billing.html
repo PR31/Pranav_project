@@ -1,0 +1,72 @@
+<html>
+<body bgcolor="green">
+
+</body>
+<script language="javascript">
+var a,b,c,d,e,f,g,i,j,k,l,m;
+function cal()
+{
+a=parseInt(document.getElementById('r1').value);
+b=parseInt(document.getElementById('q1').value);
+c=a*b;
+document.getElementById('p1').value=c;
+d=parseInt(document.getElementById('r2').value);
+e=parseInt(document.getElementById('q2').value);
+f=d*e;
+document.getElementById('p2').value=f;
+g=parseInt(document.getElementById('r3').value);
+i=parseInt(document.getElementById('q3').value);
+j=g*i;
+document.getElementById('p3').value=j;
+k=c+f+j;
+document.getElementById('tp1').value=k;
+l=0.18*k;
+document.getElementById('gs1').value=l;
+m=k+l;
+document.getElementById('tpy1').value=m;
+}
+function prt(){
+window.print();
+}
+
+</script>
+<center>
+<h1>Billing Invoice</h1>
+</center>
+<h2>Customer Information:</h2>
+<table>
+<tr>
+<hr>
+<td>Name:</td><td><input type="text"</td>
+<td>Contact No.:</td><td><input type="number"></td></tr>
+<tr>
+<td>Address:</td><td><input type="text"></td>
+<td>Email Id:</td><td><input type="text"></td></tr>
+</table> 
+<table border ="1">
+<h2>Product Information:</h2>
+<tr>
+<td>Prod_id</td><td>Prod_Name</td><td>Rate</td><td>Qty</td><td>Price</td>
+</tr>
+<tr>
+<td><input type="text"></td><td><input type="text"></td><td><input type="text" id="r1"></td><td><input type="text" id="q1"></td><td bgcolor="gray"><input type="text" id="p1" readonly></td></tr>
+<tr>
+<td><input type="text"></td><td><input type="text"></td><td><input type="text" id="r2"></td><td><input type="text" id="q2"></td><td><input type="text" id="p2" readonly></td></tr>
+<tr>
+<td><input type="text"></td><td><input type="text"></td><td><input type="text" id="r3"></td><td><input type="text" id="q3"></td><td><input type="text" id="p3" readonly></td></tr>
+<tr>
+<td colspan="3" align="right"></td><td>Total Price:</td><td><input type="text" id="tp1" readonly></td></td>
+</tr>
+<tr>
+<td colspan="3" align="right"></td><td>GST(18%):</td><td><input type="text" id="gs1" readonly></td></td>
+</tr>
+<tr>
+<td>Total Payable:</td><td><input type="text" id="tpy1" readonly></td></td>
+</tr>
+<tr>
+<td colspan="2" align="right"></td><td><input type="button" value="Calculate" id="cl1" onclick="cal()"></td></tr>
+<tr>
+<td colspan="2" align="right"></td><td><input type="button" value="Print" id="pr1" onclick="prt()"></td></tr>
+</table>
+</body>
+</html>
